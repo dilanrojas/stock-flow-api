@@ -21,21 +21,18 @@ Este documento explica, usando este proyecto como ejemplo, cómo viaja una petic
 }
 ```
 
-La petición llega al servidor Spring Boot sobre el puerto configurado en [src/main/resources/application.properties](src/main/resources/application.properties#L17).
+La petición llega al servidor Spring Boot sobre el puerto configurado en `application.properties`.
 
 ---
 
 ## 2. Primera clase que recibe la petición (cliente → servidor)
 
-### 2.1 Controlador REST
+### 2.1 Controlador
 Archivo: `ProductController.java`
 
 - La clase se expone con `@RequestMapping("/products")`.
 - El método que atiende la petición POST es `save(...)`
-- En ese método se recibe el JSON como `@RequestBody ProductRequestModel` y se convierte a un DTO con el mapper:
-  - Línea 42: `public ProductDto save(@RequestBody ProductRequestModel productRequestModel)`
-  - Línea 43: `var dto = productMapper.toProductRequestDto(productRequestModel);`
-  - Línea 44: `return productFacade.addProduct(dto);`
+- En ese método se recibe el JSON como `@RequestBody ProductRequestModel` y se convierte a un DTO con el mapper.
 
 ¿Qué ocurre aquí?
 1. Spring Boot convierte el JSON entrante en un objeto `ProductRequestModel`.
@@ -44,7 +41,7 @@ Archivo: `ProductController.java`
 
 ---
 
-## 3. Capa de transformación: del modelo HTTP al DTO de negocio
+## 3. Capa de transformación: pasamos del modelo HTTP al DTO
 
 ### 3.1 Mapper
 Archivo: `ProductMapper.java`
