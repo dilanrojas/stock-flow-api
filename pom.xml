@@ -8,11 +8,11 @@
 		<version>4.1.0-RC1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>stock-flow-api</artifactId>
+	<groupId>com.stockflow</groupId>
+	<artifactId>stockflow-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>stock-flow-api</name>
-	<description>Stock Flow API</description>
+	<name/>
+	<description/>
 	<url/>
 	<licenses>
 		<license/>
